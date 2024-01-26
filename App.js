@@ -5,11 +5,11 @@ import {
   StyleSheet,
   TouchableOpacity,
   Image
-  } from 'react-native';
+} from 'react-native';
 
-class App extends Component{
+class App extends Component {
 
-  constructor(props){
+  constructor(props) {
     super(props);
     this.state = {
       textoFrase: '',
@@ -19,82 +19,83 @@ class App extends Component{
     this.quebraBiscoito = this.quebraBiscoito.bind(this);
 
     this.frases = [
-      'Não fiquem devendo nada a ninguém, a não ser o amor mútuo. ', 
-      'Porque dele, e por ele e para ele são todas as coisas.', 
-      'Em tudo dai GRAÇAS; porque esta é a vontade de Deus em Cristo Jesus para convosco!', 
+      'Não fiquem devendo nada a ninguém, a não ser o amor mútuo. ',
+      'Porque dele, e por ele e para ele são todas as coisas.',
+      'Em tudo dai GRAÇAS; porque esta é a vontade de Deus em Cristo Jesus para convosco!',
       'Se prego o evangelho não tenho de que me gloriar, pois sobre mim pesa essa responsabilidade.',
       'Realize o óbvio, pense no improvável e conquiste o impossível.',
       'Acredite em milagres, mas não dependa deles.',
-      'A maior barreira para o sucesso é o medo do fracasso.'
+      'A maior barreira para o sucesso é o medo do fracasso.',
+      'Não se esqueçam: a chave é o amor mútuo; o resto, gratidão e fé no caminho.'
     ];
 
   }
 
-  quebraBiscoito(){
-    let numeroAleatorio = Math.floor(Math.random() * this.frases.length );
+  quebraBiscoito() {
+    let numeroAleatorio = Math.floor(Math.random() * this.frases.length);
 
     this.setState({
       textoFrase: ' "' + this.frases[numeroAleatorio] + '" ',
       img: require('./src/biscoitoAberto.png')
     });
-  
+
   }
 
 
-  render(){
-    return(
-      <View style={styles.container} > 
-      
-      <Image
-        source={this.state.img}
-        style={styles.img}
-      />
+  render() {
+    return (
+      <View style={styles.container} >
 
-      <Text style={styles.textoFrase}>{this.state.textoFrase}</Text>
+        <Image
+          source={this.state.img}
+          style={styles.img}
+        />
 
-      <TouchableOpacity style={styles.botao} onPress={this.quebraBiscoito}>
-        <View style={styles.btnArea}>
-          <Text style={styles.btnTexto}>Quebrar Biscoito</Text>
-        </View>
-      </TouchableOpacity>  
+        <Text style={styles.textoFrase}>{this.state.textoFrase}</Text>
 
-      </View>    
+        <TouchableOpacity style={styles.botao} onPress={this.quebraBiscoito}>
+          <View style={styles.btnArea}>
+            <Text style={styles.btnTexto}>Quebrar Biscoito</Text>
+          </View>
+        </TouchableOpacity>
+
+      </View>
     );
   }
 
 }
 
 const styles = StyleSheet.create({
-  container:{
-    flex:1,
+  container: {
+    flex: 1,
     alignItems: 'center',
     justifyContent: 'center'
   },
-  img:{
+  img: {
     width: 250,
     height: 250,
   },
-  textoFrase:{
+  textoFrase: {
     fontSize: 20,
     color: '#dd7b22',
     margin: 30,
     fontStyle: 'italic',
     textAlign: 'center'
   },
-  botao:{
+  botao: {
     width: 230,
     height: 50,
     borderWidth: 2,
     borderColor: '#dd7b22',
-    borderRadius: 25 
+    borderRadius: 25
   },
-  btnArea:{
-    flex:1,
+  btnArea: {
+    flex: 1,
     flexDirection: 'row',
     justifyContent: 'center',
     alignItems: 'center'
   },
-  btnTexto:{
+  btnTexto: {
     fontSize: 18,
     fontWeight: 'bold',
     color: '#dd7b22'
