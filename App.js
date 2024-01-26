@@ -26,7 +26,7 @@ class App extends Component {
       'Realize o óbvio, pense no improvável e conquiste o impossível.',
       'Acredite em milagres, mas não dependa deles.',
       'A maior barreira para o sucesso é o medo do fracasso.',
-      'Não se esqueçam: a chave é o amor mútuo; o resto, gratidão e fé no caminho.'
+      'Não se esqueçam: a chave é o amor mútuo; o resto, gratidão e fé no.'
     ];
 
   }
